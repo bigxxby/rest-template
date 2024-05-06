@@ -1,10 +1,8 @@
 package main
 
-import (
-	"app/internal/build"
-)
+import "app/internal/api/router"
 
 func main() {
-
-	build.Build()
+	server := router.Setup()
+	server.Run(":8080")
 }

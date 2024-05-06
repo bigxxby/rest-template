@@ -1,4 +1,4 @@
-package database
+package repository
 
 import (
 	"fmt"
@@ -8,8 +8,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func InitDatabase() (*gorm.DB, error) {
-
+func NewConnection() (*gorm.DB, error) {
 	dbHost := os.Getenv("DB_HOST")
 	dbPort := os.Getenv("DB_PORT")
 	dbUser := os.Getenv("DB_USER")
@@ -24,5 +23,4 @@ func InitDatabase() (*gorm.DB, error) {
 	}
 
 	return db, nil
-
 }
